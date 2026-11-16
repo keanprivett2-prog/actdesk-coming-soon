@@ -1,0 +1,1449 @@
+
+/* =========================================
+   ACT DESK — COMING SOON
+   ========================================= */
+
+:root {
+    color-scheme: dark;
+    --bg: #06101f;
+    --bg-soft: #0b1930;
+    --panel: #101f37;
+    --blue: #2878ff;
+    --blue-light: #61a0ff;
+    --text: #f8fbff;
+    --muted: #aabbd3;
+    --border: rgba(69, 137, 255, 0.25);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 3px solid #8dbaff;
+    outline-offset: 4px;
+}
+
+.page-background {
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 50% 74%,
+            rgba(29, 95, 232, 0.22),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 0% 45%,
+            rgba(12, 66, 148, 0.18),
+            transparent 36%
+        ),
+        linear-gradient(180deg, #06101c, #09162b 75%, #06101c);
+}
+
+/* HEADER */
+
+.site-header {
+    max-width: 1200px;
+    margin: auto;
+    padding: 28px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #348dff, #1556dc);
+    display: grid;
+    place-items: center;
+    font-size: 32px;
+    box-shadow: 0 8px 28px rgba(26, 99, 255, 0.22);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.brand-text strong {
+    font-size: 27px;
+    letter-spacing: -0.7px;
+}
+
+.brand-text small {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+.coming-soon-badge {
+    border: 1px solid var(--blue);
+    border-radius: 999px;
+    color: var(--blue-light);
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1000px;
+    margin: 65px auto 35px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--blue-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 20px auto;
+    font-size: clamp(42px, 6.8vw, 82px);
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1.12;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--blue);
+}
+
+.hero-description {
+    max-width: 750px;
+    margin: 24px auto 0;
+    font-size: clamp(16px, 2vw, 21px);
+    color: #c6d2e4;
+}
+
+/* FEATURES */
+
+.features {
+    max-width: 1100px;
+    margin: 65px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature-icon {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 15px;
+    border: 1px solid rgba(52, 119, 255, 0.22);
+    border-radius: 19px;
+    background: linear-gradient(145deg, #102d59, #081b36);
+    display: grid;
+    place-items: center;
+    font-size: 38px;
+    color: var(--blue-light);
+}
+
+.feature h2 {
+    font-size: 17px;
+    margin: 8px 0 5px;
+}
+
+.feature p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* WAITING LIST */
+
+.waitlist {
+    width: min(850px, calc(100% - 40px));
+    margin: 45px auto 70px;
+    padding: 34px 40px;
+    text-align: center;
+    background: rgba(10, 27, 52, 0.88);
+    border: 1px solid rgba(36, 112, 255, 0.65);
+    border-radius: 25px;
+    box-shadow: 0 20px 65px rgba(0, 20, 70, 0.25);
+}
+
+.waitlist h2 {
+    font-size: clamp(26px, 4vw, 34px);
+    margin: 0 0 4px;
+}
+
+.waitlist > p {
+    color: var(--muted);
+}
+
+.waitlist-form {
+    display: flex;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.waitlist-form input {
+    min-width: 0;
+    flex: 1;
+    padding: 15px 18px;
+    border-radius: 11px;
+    border: 1px solid #455e82;
+    background: #101e33;
+    color: #fff;
+}
+
+.waitlist-form input::placeholder {
+    color: #8294ad;
+}
+
+.waitlist-form button {
+    padding: 15px 24px;
+    border: 0;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #358aff, #1961f3);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 7px 22px rgba(30, 105, 255, 0.24);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.waitlist-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(30, 105, 255, 0.38);
+}
+
+.waitlist-form button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    margin: 18px auto 0;
+    max-width: 550px;
+    color: #c5d2e5;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.consent-label input {
+    margin-top: 4px;
+    accent-color: var(--blue);
+}
+
+.form-message {
+    min-height: 1.5em;
+    margin: 12px 0 0;
+    font-size: 14px;
+}
+
+.form-message.success {
+    color: #65e6b3;
+}
+
+.form-message.error {
+    color: #ff9292;
+}
+
+.waitlist .waitlist-note {
+    font-size: 12px;
+    color: #879ab5;
+    margin: 15px 0 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* DASHBOARD PREVIEW */
+
+.preview {
+    max-width: 1150px;
+    margin: 0 auto 85px;
+    padding: 0 24px;
+}
+
+.preview-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.preview-heading h2 {
+    font-size: clamp(22px, 3vw, 32px);
+    margin: 8px 0;
+}
+
+.dashboard-frame {
+    padding: 15px;
+    border-radius: 30px;
+    border: 2px solid rgba(79, 145, 255, 0.75);
+    background: linear-gradient(135deg, #10264c, #071427);
+    box-shadow: 0 0 70px rgba(33, 100, 255, 0.22);
+}
+
+.dashboard-demo {
+    min-height: 390px;
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr);
+    overflow: hidden;
+    border-radius: 17px;
+    background: #0a1729;
+}
+
+.demo-sidebar {
+    background: #091323;
+    padding: 20px 12px;
+    border-right: 1px solid #1c304a;
+}
+
+.demo-brand {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0 10px 24px;
+}
+
+.demo-sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.demo-sidebar nav span {
+    padding: 10px 12px;
+    color: #a9bbd3;
+    font-size: 13px;
+    border-radius: 7px;
+}
+
+.demo-sidebar nav .active {
+    background: #17417e;
+    color: #fff;
+}
+
+.demo-content {
+    min-width: 0;
+    padding: 20px;
+}
+
+.demo-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.demo-avatar {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #bcd6ff;
+    color: #09214b;
+    font-size: 12px;
+}
+
+.demo-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.stat-card {
+    padding: 16px;
+    border: 1px solid #1c3554;
+    border-radius: 10px;
+    background: #102139;
+}
+
+.stat-card small {
+    display: block;
+    color: #9db0c9;
+    font-size: 11px;
+}
+
+.stat-card strong {
+    display: block;
+    font-size: 27px;
+    margin-top: 8px;
+}
+
+.demo-table-wrap {
+    margin-top: 22px;
+    padding: 17px;
+    background: #102139;
+    border: 1px solid #1c3554;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.demo-table-wrap h3 {
+    font-size: 15px;
+    margin: 0 0 14px;
+}
+
+.demo-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+.demo-table th,
+.demo-table td {
+    padding: 12px 9px;
+    border-bottom: 1px solid #243b58;
+    white-space: nowrap;
+}
+
+.demo-table th {
+    color: #a7bad3;
+    font-weight: 500;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.status.open {
+    color: #ffb4c3;
+    background: #492638;
+}
+
+.status.progress {
+    color: #a4c8ff;
+    background: #193e79;
+}
+
+.status.pending {
+    color: #ffe1a0;
+    background: #55451d;
+}
+
+.preview-disclaimer {
+    text-align: center;
+    color: #7d91ac;
+    font-size: 12px;
+    margin-top: 14px;
+}
+
+/* FOOTER */
+
+.site-footer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+    border-top: 1px solid rgba(91, 138, 203, 0.16);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: #a3b5cc;
+    font-size: 12px;
+}
+
+.site-footer strong {
+    color: #fff;
+    font-size: 17px;
+}
+
+.footer-links a:hover {
+    color: var(--blue-light);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .demo-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        margin-top: 45px;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 20px 16px;
+    }
+
+    .brand-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 25px;
+    }
+
+    .brand-text strong {
+        font-size: 20px;
+    }
+
+    .brand-text small {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .coming-soon-badge {
+        font-size: 9px;
+        padding: 7px 10px;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .features {
+        gap: 28px 15px;
+        margin: 45px auto;
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 29px;
+    }
+
+    .feature h2 {
+        font-size: 14px;
+    }
+
+    .feature p {
+        font-size: 12px;
+    }
+
+    .waitlist {
+        padding: 25px 18px;
+        margin-bottom: 55px;
+    }
+
+    .waitlist-form {
+        flex-direction: column;
+    }
+
+    .waitlist-form button {
+        width: 100%;
+    }
+
+    .dashboard-frame {
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .dashboard-demo {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .demo-sidebar {
+        display: none;
+    }
+
+    .demo-content {
+        padding: 12px;
+    }
+
+    .stat-card {
+        padding: 12px;
+    }
+
+    .stat-card strong {
+        font-size: 22px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 16px;
+        gap: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .waitlist-form button {
+        transition: none;
+    }
+}
+
+
+/* Waiting-list privacy notice */
+.waitlist-privacy {
+    max-width: 480px;
+    margin: 14px auto 18px;
+    padding: 0 12px;
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.waitlist-privacy a {
+    color: #60a5fa;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.waitlist-privacy a:hover {
+    color: #93c5fd;
+}
+
+
+/* ========================================
+   PRIVACY POLICY PAGE
+======================================== */
+
+.privacy-page {
+    width: min(100% - 40px, 820px);
+    margin: 60px auto 100px;
+    padding: 48px;
+    color: #cbd5e1;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-radius: 20px;
+}
+
+.privacy-page h1 {
+    margin: 12px 0 20px;
+    color: #ffffff;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+}
+
+.privacy-page h2 {
+    margin: 36px 0 12px;
+    color: #f1f5f9;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.privacy-page p {
+    margin-bottom: 18px;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.privacy-page a {
+    color: #60a5fa;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.privacy-page a:hover {
+    color: #93c5fd;
+}
+
+@media (max-width: 600px) {
+    .privacy-page {
+        width: calc(100% - 24px);
+        margin: 30px auto 60px;
+        padding: 28px 20px;
+    }
+
+    .privacy-page h2 {
+        font-size: 17px;
+    }
+
+    .privacy-page p {
+        font-size: 14px;
+    }
+}
+
+
+/* ACT Desk header branding */
+
+.site-header .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+}
+
+.site-header .brand-logo {
+    display: block;
+    width: 155px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.site-header .brand-powered-by {
+    display: block;
+    padding-left: 16px;
+    border-left: 1px solid rgba(148, 163, 184, 0.35);
+    color: #94a3b8;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.site-header .brand-powered-by strong {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+/* Mobile header branding */
+
+@media (max-width: 600px) {
+    .site-header .brand {
+        gap: 10px;
+    }
+
+    .site-header .brand-logo {
+        width: 105px;
+    }
+
+    .site-header .brand-powered-by {
+        padding-left: 10px;
+        font-size: 8px;
+        letter-spacing: 0.4px;
+    }
+
+    .site-header .brand-powered-by strong {
+        font-size: 10px;
+        letter-spacing: 0.3px;
+    }
+}
+
+
+/* ==========================================
+   ACT DESK — SNEAK PEEK
+========================================== */
+
+.sneak-peek {
+    padding: 100px 24px;
+    background: linear-gradient(
+        180deg,
+        #071426 0%,
+        #0b1d35 50%,
+        #071426 100%
+    );
+    color: #ffffff;
+}
+
+.sneak-peek-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sneak-peek-heading {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.sneak-peek-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #38bdf8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sneak-peek-heading h2 {
+    margin-bottom: 16px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.sneak-peek-heading p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #a5b4c8;
+    line-height: 1.7;
+}
+
+/* Feature tabs */
+
+.sneak-peek-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.sneak-tab {
+    padding: 12px 28px;
+    border: 1px solid #244364;
+    border-radius: 10px;
+    background: #10243e;
+    color: #a5b4c8;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.sneak-tab:hover {
+    border-color: #38bdf8;
+    color: #ffffff;
+}
+
+.sneak-tab.active {
+    background: #123c60;
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.12);
+}
+
+/* Preview container */
+
+.sneak-peek-content {
+    padding: 36px;
+    border: 1px solid #244364;
+    border-radius: 20px;
+    background: #0d2038;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.sneak-panel[hidden] {
+    display: none;
+}
+
+.sneak-panel-heading {
+    margin-bottom: 26px;
+}
+
+.sneak-panel-heading h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.sneak-panel-heading p {
+    color: #a5b4c8;
+    line-height: 1.7;
+}
+
+.sneak-demo {
+    min-height: 260px;
+    padding: 24px;
+    border: 1px solid #244364;
+    border-radius: 14px;
+    background: #071426;
+}
+
+.sneak-demo-label {
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Footer and disclaimer */
+
+.sneak-peek-disclaimer {
+    margin-top: 18px;
+    text-align: center;
+    color: #8094ac;
+    font-size: 12px;
+}
+
+.sneak-peek-footer {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.sneak-peek-footer h3 {
+    margin-bottom: 12px;
+    font-size: 26px;
+    color: #ffffff;
+}
+
+.sneak-peek-footer p {
+    color: #a5b4c8;
+    line-height: 1.7;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+    .sneak-peek {
+        padding: 65px 16px;
+    }
+
+    .sneak-peek-tabs {
+        gap: 8px;
+    }
+
+    .sneak-tab {
+        flex: 1;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .sneak-peek-content {
+        padding: 20px;
+    }
+
+    .sneak-panel-heading h3 {
+        font-size: 21px;
+    }
+
+    .sneak-demo {
+        min-height: 220px;
+        padding: 16px;
+    }
+}
+
+
+/* ==========================================
+   ACT DESK — LIVE VIEW PREVIEW
+========================================== */
+
+.sneak-live-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.sneak-live-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #34d399;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sneak-live-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 12px rgba(52, 211, 153, 0.7);
+    animation: sneakLivePulse 2s infinite;
+}
+
+@keyframes sneakLivePulse {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 6px rgba(52, 211, 153, 0.5);
+    }
+
+    50% {
+        opacity: 0.5;
+        box-shadow: 0 0 18px rgba(52, 211, 153, 0.9);
+    }
+}
+
+/* Statistics cards */
+
+.sneak-live-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.sneak-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+    padding: 20px;
+    background: #102a46;
+    border: 1px solid #244364;
+    border-radius: 12px;
+}
+
+.sneak-stat-card > span {
+    color: #a5b4c8;
+    font-size: 12px;
+}
+
+.sneak-stat-card > strong {
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.sneak-stat-card > small {
+    color: #8094ac;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* Activity feed */
+
+.sneak-activity {
+    overflow: hidden;
+    border: 1px solid #244364;
+    border-radius: 12px;
+    background: #0b1d35;
+}
+
+.sneak-activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    border-bottom: 1px solid #244364;
+}
+
+.sneak-activity-header h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.sneak-activity-header > span {
+    color: #8094ac;
+    font-size: 11px;
+}
+
+.sneak-activity-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(36, 67, 100, 0.6);
+    transition: background 0.2s ease;
+}
+
+.sneak-activity-item:last-child {
+    border-bottom: none;
+}
+
+.sneak-activity-item:hover {
+    background: #102a46;
+}
+
+.sneak-activity-icon {
+    color: #38bdf8;
+    font-size: 13px;
+}
+
+.sneak-activity-item > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.sneak-activity-item strong {
+    color: #e2e8f0;
+    font-size: 13px;
+}
+
+.sneak-activity-item p {
+    margin: 5px 0 0;
+    color: #8094ac;
+    font-size: 11px;
+}
+
+.sneak-activity-tag {
+    flex-shrink: 0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.sneak-activity-tag.resolved {
+    background: rgba(52, 211, 153, 0.12);
+    color: #34d399;
+}
+
+.sneak-demo-note {
+    margin: 20px 0 0;
+    text-align: center;
+    color: #8094ac;
+    font-size: 11px;
+}
+
+/* Responsive Live View */
+
+@media (max-width: 900px) {
+    .sneak-live-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .sneak-live-stats {
+        gap: 10px;
+    }
+
+    .sneak-stat-card {
+        padding: 14px;
+    }
+
+    .sneak-stat-card > strong {
+        font-size: 26px;
+    }
+
+    .sneak-activity-item {
+        gap: 8px;
+        padding: 14px 10px;
+    }
+
+    .sneak-activity-tag {
+        padding: 5px 7px;
+        font-size: 9px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sneak-live-dot {
+        animation: none;
+    }
+}
+
+
+/* ==========================================
+   ACT DESK — WORKFLOW SNEAK PEEK
+========================================== */
+
+.sneak-workflow-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.sneak-workflow-badge {
+    padding: 7px 12px;
+    border: 1px solid #244364;
+    border-radius: 20px;
+    background: rgba(56, 189, 248, 0.08);
+    color: #38bdf8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Workflow canvas */
+
+.sneak-workflow-canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    border: 1px solid #244364;
+    border-radius: 14px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(56, 189, 248, 0.06),
+            transparent 65%
+        ),
+        #091a2e;
+}
+
+/* Workflow stages */
+
+.sneak-workflow-node {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 360px;
+    padding: 18px 22px;
+    border: 1px solid #315477;
+    border-radius: 12px;
+    background: #102a46;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.sneak-node-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.sneak-workflow-node > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sneak-workflow-node strong {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.sneak-workflow-node small {
+    color: #a5b4c8;
+    font-size: 12px;
+}
+
+/* Connecting arrows */
+
+.sneak-workflow-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    color: #38bdf8;
+    font-size: 24px;
+}
+
+/* Active workflow stage */
+
+.sneak-workflow-node.active {
+    border-color: #38bdf8;
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.25);
+    transform: scale(1.03);
+}
+
+.sneak-workflow-node.completed {
+    border-color: #34d399;
+    background: #10372f;
+}
+
+.sneak-workflow-node.completed .sneak-node-number {
+    background: rgba(52, 211, 153, 0.15);
+    color: #34d399;
+}
+
+/* Workflow controls */
+
+.sneak-workflow-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+}
+
+#sneak-workflow-play {
+    padding: 13px 28px;
+    border: 1px solid #38bdf8;
+    border-radius: 10px;
+    background: #123c60;
+    color: #ffffff;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#sneak-workflow-play:hover {
+    background: #17527e;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+#sneak-workflow-play:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 3px;
+}
+
+#sneak-workflow-play:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+    .sneak-workflow-canvas {
+        padding: 20px 12px;
+    }
+
+    .sneak-workflow-node {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .sneak-node-number {
+        width: 36px;
+        height: 36px;
+    }
+
+    .sneak-workflow-node strong {
+        font-size: 13px;
+    }
+
+    .sneak-workflow-node small {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sneak-workflow-node {
+        transition: none;
+    }
+}
+
+
+/* ==========================================
+   ACT DESK — UPCOMING FEATURES TEASER
+========================================== */
+
+.sneak-coming-next {
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+    padding: 48px 28px;
+    text-align: center;
+    border: 1px solid #244364;
+    border-radius: 20px;
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(56, 189, 248, 0.13),
+            transparent 65%
+        ),
+        #0b1d35;
+}
+
+.sneak-coming-next-icon {
+    margin-bottom: 16px;
+    color: #38bdf8;
+    font-size: 32px;
+    text-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+}
+
+.sneak-coming-next-label {
+    display: block;
+    margin-bottom: 14px;
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sneak-coming-next h3 {
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: clamp(24px, 3vw, 34px);
+}
+
+.sneak-coming-next p {
+    max-width: 580px;
+    margin: 0 auto 26px;
+    color: #a5b4c8;
+    line-height: 1.7;
+}
+
+.sneak-secret-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sneak-secret-features span {
+    padding: 10px 16px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 30px;
+    background: rgba(56, 189, 248, 0.06);
+    color: #cbd5e1;
+    font-size: 12px;
+}
+
+/* Hide the older footer to avoid repeated messaging */
+
+.sneak-peek-footer {
+    display: none;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+    .sneak-coming-next {
+        margin-top: 28px;
+        padding: 34px 18px;
+    }
+
+    .sneak-secret-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sneak-secret-features span {
+        width: 100%;
+        max-width: 280px;
+    }
+}
